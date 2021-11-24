@@ -6,8 +6,24 @@ import CreateButton from '../components/CreateButton';
 import { useState } from 'react';
 import Header from '../components/Header';
 import InputCreate from '../components/InputCreate';
-import FormChange from '../components/FormChange';
+import useForm from '../components/useForm';
 
+
+const inputValues = {
+  category: "",
+  title: "",
+  uniqname: "",
+  desc: "",
+  contInfo: ""
+};
+
+const categoryOpts = [
+  'Music',
+  'Movies',
+  'School',
+  'Reading',
+  'Studying',
+];
 
 export default function Create() {
   // const handleSubmit = (event) => {
@@ -20,25 +36,18 @@ export default function Create() {
   //   } 
   // }
 
-  const inputValues = {
-    category: "",
-    title: "",
-    uniqname: "",
-    desc: "",
-    contInfo: ""
-  };
+
 
   // const [data, setData] = useState(inputValues);
 
   const handleSubmit = (event) => {
     // setData(event.target);
     console.log(inputValues.category)
-    console.log(event);
-    console.log(event);
-    console.log(event);
-    console.log(event);
-    console.log(event);
   }
+
+  const { values, handleChange } = useForm(inputValues);
+
+
 
   return (
     <Box
@@ -57,12 +66,43 @@ export default function Create() {
         Create Post
       </Typography>
       <form noValidate onSubmit={handleSubmit} autoComplete="off">
-        <InputCreate
-          name='test'
-          value='test'
-          handleChange={FormChange(inputValues)}
-        />
-        <CreateTextField inputValues={inputValues} />
+        <Box
+          sx={{
+            '& .MuiTextField-root': { m: 1, mx: 'auto'},
+          }}
+        >
+          <InputCreate
+            label='Category'
+            name='category'
+            options={categoryOpts}
+            value={values.category}
+            onChange={handleChange}
+          />
+          <InputCreate
+            label='Title'
+            name='title'
+            value={values.title}
+            onChange={handleChange}
+          />
+          <InputCreate
+            label='Uniqname'
+            name='uniqname'
+            value={values.uniqname}
+            onChange={handleChange}
+          />
+          <InputCreate
+            label='Contact Info'
+            name='contInfo'
+            value={values.contInfo}
+            onChange={handleChange}
+          />
+          <InputCreate
+            label='Description'
+            name='desc'
+            value={values.desc}
+            onChange={handleChange}
+          />
+        </Box>
         <CreateButton />
       </form>
     </Box>

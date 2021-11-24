@@ -1,9 +1,32 @@
 import React from 'react'
-import { TextField } from '@mui/material'
+import { TextField, MenuItem } from '@mui/material'
+
 
 export default function InputCreate(props) {
-    // TODO label, 
-    const { name, value, handleChange } = props;
+    const { label, name, value, options,  onChange } = props;
+    
+    // if options are provided for a select input
+    if (options) {
+        const select = true;
+        return (
+            <TextField
+                name={name}
+                required
+                select={select}
+                fullWidth
+                value={value}
+                onChange={onChange}
+                label={label}
+                variant="filled"
+            >
+            {options.map((option) => (
+                <MenuItem key={option} value={option}>
+                  {option}
+                </MenuItem>
+              ))}
+            </TextField>
+        )
+    }
 
     return (
         <TextField
@@ -11,8 +34,8 @@ export default function InputCreate(props) {
             required
             fullWidth
             value={value}
-            onChange={handleChange}
-            label="Test"
+            onChange={onChange}
+            label={label}
             variant="filled"
         />
     )

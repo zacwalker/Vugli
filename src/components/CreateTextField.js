@@ -56,15 +56,6 @@ export default function CreateTextField(inputValues) {
         fullWidth
         value={values.title}
         onChange={handleChange}
-        label="Test"
-        variant="filled"
-      />
-      <TextField
-        name="title"
-        required
-        fullWidth
-        value={values.title}
-        onChange={handleChange}
         label="Title"
         variant="filled"
       />
