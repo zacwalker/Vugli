@@ -1,0 +1,53 @@
+{
+    "posts": [
+        {
+            "uniqname": "dcskeen",
+            "category": "Movie",
+            "description": "Jurassic Park",
+            "contactInfo": "dcskeen@umich.edu",
+            "contactStatement": "Hey everyone, Daniel here! I really enjoyed this movie and was wondering if other people wanted watch or talk about"
+        },
+        {
+            "uniqname": "kgaba",
+            "category": "Homework",
+            "description": "EECS 441",
+            "contactInfo": "+1 (123) 456-7890",
+            "contactStatement": "Hey everyone, Lil Boat here! I've been working on this project and was looking for people who may want to help test it out!"
+        },
+        {
+            "uniqname": "kimjuyou",
+            "category": "Reading",
+            "description": "Harry Potter",
+            "contactInfo": "t.me/kimjuyou",
+            "contactStatement": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!"
+        },
+        {
+            "uniqname": "zwall",
+            "category": "Music",
+            "description": "Jingle Bell",
+            "contactInfo": "zwall@umich.edu",
+            "contactStatement": "Hey everyone, Zac here! I've been really into christmas music lately lately and was hoping other people wanted to play or talk about it too!"
+        },
+        {
+            "uniqname": "zwall",
+            "category": "Music",
+            "description": "Jingle Bell Rock",
+            "contactInfo": "zwall@umich.edu",
+            "contactStatement": "Hey everyone, Zac here! I just discovered this other christmas song and was hoping other people wanted to play or talk about it too!"
+        },
+        {
+            "uniqname": "kimjuyou",
+            "category": "Reading",
+            "description": "Hunger Games",
+            "contactInfo": "t.me/kimjuyou",
+            "contactStatement": "Hey everyone, Ju Young here! I've been reading this series a lot lately and was hoping other people wanted to read and talk about it too!"
+        },
+        {
+            "uniqname": "gaffney",
+            "category": "Homework",
+            "description": "Hula",
+            "contactInfo": "gaffney@umich.edu",
+            "contactStatement": "Hey everyone, Conor here! I've been playing this game a lot lately and was hoping other people wanted to play or talk about it too!"
+        }
+    ]
+}
