@@ -95,6 +95,7 @@ export default function Create() {
           label='Title'
           name='title'
           error={titleError}
+          helperT
           value={values.title}
           onChange={handleChange}
         />
