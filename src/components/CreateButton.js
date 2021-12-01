@@ -21,7 +21,7 @@ export default function CreateButton() {
                 variant="outlined"
                 startIcon={<DeleteIcon />}
             >
-                delete
+                Discard
             </Button>
             <Button
                 color="secondary"

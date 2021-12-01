@@ -32,24 +32,6 @@ export default function CreateTextField(inputValues) {
         '& .MuiTextField-root': { m: 1 },
       }}
     >
-      {/* <TextField
-        name='category'
-        fullWidth
-        id="outlined-select-category"
-        select
-        required
-        label="Category"
-        value={values.category}
-        onChange={handleChange}
-        variant="filled"
-        defaultValue = ""
-      >
-        {categoryOpts.map((option) => (
-          <MenuItem key={option} value={option}>
-            {option}
-          </MenuItem>
-        ))}
-      </TextField> */}
       <TextField
         name="title"
         required
