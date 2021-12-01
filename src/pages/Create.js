@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import CreateButton from '../components/CreateButton';
-import Header from '../components/Header';
 import InputCreate from '../components/InputCreate';
 import useForm from '../components/useForm';
 import { useHistory } from "react-router-dom";
@@ -118,7 +117,6 @@ export default function Create() {
           name='uniqname'
           error={uniqnameError}
           helperText='This field is required'
-
           value={values.uniqname}
           onChange={handleChange}
         />
@@ -127,7 +125,6 @@ export default function Create() {
           name='contInfo'
           error={contInfoError}
           helperText='This field is required'
-
           value={values.contInfo}
           onChange={handleChange}
         />
@@ -136,7 +133,6 @@ export default function Create() {
           name='desc'
           error={descError}
           helperText='This field is required'
-
           value={values.desc}
           onChange={handleChange}
         />

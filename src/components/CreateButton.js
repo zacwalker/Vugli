@@ -2,35 +2,40 @@ import React from 'react';
 import { Box } from '@mui/system';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import AddIcon from '@mui/icons-material/Add';
+import { useHistory } from "react-router-dom";
 
 
-export default function CreateButton() {
-    return (
-        <Box
-            sx={{
-                textAlign: 'right',
-                '& button': {
-                    m: 1
-                }
-            }}
-        >
-            <Button
-                color="info"
-                type="submit"
-                variant="outlined"
-                startIcon={<DeleteIcon />}
-            >
-                Discard
-            </Button>
-            <Button
-                color="secondary"
-                type="submit"
-                variant="contained"
-                endIcon={<ChevronRightIcon />}
-            >
-                Create
-            </Button>
-        </Box>
-    )
+export default function CreateButton(props) {
+  const history = useHistory()
+
+  return (
+    <Box
+      sx={{
+        textAlign: 'right',
+        '& button': {
+          m: 1
+        }
+      }}
+    >
+      <Button
+        color="info"
+        variant="outlined"
+        onClick={() => {
+          history.push('/')
+        }}
+        startIcon={<DeleteIcon />}
+      >
+        Discard
+      </Button>
+      <Button
+        color="secondary"
+        type="submit"
+        variant="contained"
+        endIcon={<AddIcon />}
+      >
+        Create
+      </Button>
+    </Box>
+  )
 }
