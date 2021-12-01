@@ -6,7 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { useHistory } from "react-router-dom";
 
 
-export default function CreateButton(props) {
+export default function CreateButton() {
   const history = useHistory()
 
   return (

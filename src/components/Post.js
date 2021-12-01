@@ -14,7 +14,7 @@ export default function Post(post) {
   const data = post.post;
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} color="secondary" raised>
       <CardHeader
         action={
           <IconButton aria-label="settings">
@@ -30,7 +30,7 @@ export default function Post(post) {
         image="/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" color="primary">
           {data.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">

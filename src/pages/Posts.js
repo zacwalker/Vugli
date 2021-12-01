@@ -15,9 +15,9 @@ export default function Posts() {
 
   return (
     <Container>
-      <Grid container spacing={3}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 1, sm: 6, md: 12 }}>
         {posts.map(post => (
-          <Grid item xs={12} md={6} lg={4} key={post.id}>
+          <Grid item xs={1} sm={3} md={3} key={post.id}>
             <Post post={post} />
           </Grid>
         ))}
