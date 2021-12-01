@@ -9,37 +9,32 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+// TODO handle image
+export default function Post(post) {
+  const data = post.post;
 
-export default function Post() {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
-        // avatar={
-        //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-        //     R
-        //   </Avatar>
-        // }
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={data.category}
+        subheader={data.uniqname}
       />
       <CardMedia
         component="img"
-        alt="green iguana"
         height="140"
         image="/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {data.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {data.desc}
         </Typography>
       </CardContent>
       <CardActions>
