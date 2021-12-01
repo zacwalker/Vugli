@@ -4,6 +4,7 @@
       "id": 1,
       "uniqname": "dcskeen",
       "category": "Movie",
+      "image": "/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg",
       "title": "Jurassic Park",
       "contInfo": "dcskeen@umich.edu",
       "desc": "Hey everyone, Daniel here! I really enjoyed this movie and was wondering if other people wanted watch or talk about"
@@ -12,6 +13,7 @@
       "id": 2,
       "uniqname": "kgaba",
       "category": "Homework",
+      "image": "/img/pexels-keira-burton-6147276.jpg",
       "title": "EECS 441",
       "contInfo": "+1 (123) 456-7890",
       "desc": "Hey everyone, Lil Boat here! I've been working on this project and was looking for people who may want to help test it out!"
@@ -20,6 +22,7 @@
       "id": 3,
       "uniqname": "kimjuyou",
       "category": "Reading",
+      "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
       "title": "Harry Potter",
       "contInfo": "t.me/kimjuyou",
       "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!"
@@ -28,6 +31,7 @@
       "id": 4,
       "uniqname": "zwall",
       "category": "Music",
+      "image": "/img/spencer-imbrock-JAHdPHMoaEA-unsplash.jpg",
       "title": "Jingle Bell",
       "contInfo": "zwall@umich.edu",
       "desc": "Hey everyone, Zac here! I've been really into christmas music lately lately and was hoping other people wanted to play or talk about it too!"
@@ -36,6 +40,7 @@
       "id": 5,
       "uniqname": "zwall",
       "category": "Music",
+      "image": "/img/spencer-imbrock-JAHdPHMoaEA-unsplash.jpg",
       "title": "Jingle Bell Rock",
       "contInfo": "zwall@umich.edu",
       "desc": "Hey everyone, Zac here! I just discovered this other christmas song and was hoping other people wanted to play or talk about it too!"
@@ -44,6 +49,7 @@
       "id": 6,
       "uniqname": "kimjuyou",
       "category": "Reading",
+      "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
       "title": "Hunger Games",
       "contInfo": "t.me/kimjuyou",
       "desc": "Hey everyone, Ju Young here! I've been reading this series a lot lately and was hoping other people wanted to read and talk about it too!"
@@ -52,17 +58,28 @@
       "id": 7,
       "uniqname": "gaffney",
       "category": "Homework",
+      "image": "/img/pexels-keira-burton-6147276.jpg",
       "title": "Hula",
       "contInfo": "gaffney@umich.edu",
       "desc": "Hey everyone, Conor here! I've been playing this game a lot lately and was hoping other people wanted to play or talk about it too!"
     },
     {
       "category": "School",
+      "image": "/img/pexels-pixabay-207691.jpg",
       "title": "asd",
       "uniqname": "asd",
       "desc": "asd",
       "contInfo": "as",
       "id": 8
+    },
+    {
+      "category": "School",
+      "image": "/img/pexels-pixabay-207691.jpg",
+      "title": "eecs 493",
+      "uniqname": "zwall",
+      "desc": "Hey everyone, I was wondering if anyone wanted to chat about the user interface lectures this week",
+      "contInfo": "zwall@umich.edu",
+      "id": 9
     }
   ]
 }

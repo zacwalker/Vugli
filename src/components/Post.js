@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+
 // TODO handle image
 export default function Post(post) {
   const data = post.post;
@@ -27,7 +28,8 @@ export default function Post(post) {
       <CardMedia
         component="img"
         height="140"
-        image="/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg"
+        // image="/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg"
+        image={data.image}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" color="primary">

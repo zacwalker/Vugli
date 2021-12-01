@@ -21,8 +21,16 @@ const categoryOpts = [
   'Movies',
   'School',
   'Reading',
-  'Studying',
+  'Homework',
 ];
+
+const imageOpts = {
+  "Music": "/img/spencer-imbrock-JAHdPHMoaEA-unsplash.jpg",
+  "Movies": "/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg",
+  "School": "/img/pexels-pixabay-207691.jpg",
+  "Reading": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
+  "Homework": "/img/pexels-keira-burton-6147276.jpg",
+}
 
 export default function Create() {
   const { values, handleChange } = useForm(inputValues);
@@ -68,6 +76,7 @@ export default function Create() {
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
           "category": values.category,
+          "image": imageOpts[values.category],
           "title": values.title,
           "uniqname": values.uniqname,
           "desc": values.desc,
