@@ -6,6 +6,7 @@ import CreateButton from '../components/CreateButton';
 import Header from '../components/Header';
 import InputCreate from '../components/InputCreate';
 import useForm from '../components/useForm';
+import { useHistory } from "react-router-dom";
 
 
 const inputValues = {
@@ -26,8 +27,11 @@ const categoryOpts = [
 
 export default function Create() {
   const { values, handleChange } = useForm(inputValues);
-  
-  // simple (but probably bad) validation
+  const history = useHistory()
+
+  // simple (but bad) validation
+  // TODO make a services directory for serperate validate and insert functions
+  // TODO improve form validation (limit input chars, length, and types)
   const [categoryError, setcategoryErr] = useState(false);
   const [titleError, settitleErr] = useState(false);
   const [uniqnameError, setuniqnameErr] = useState(false);
@@ -36,6 +40,12 @@ export default function Create() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    setcategoryErr(false);
+    settitleErr(false);
+    setuniqnameErr(false);
+    setdescErr(false);
+    setcontInfoErr(false);
 
     if (!values.category) {
       setcategoryErr(true);
@@ -53,17 +63,20 @@ export default function Create() {
       setcontInfoErr(true);
     }
 
-    console.log('valid post submission')
-    // if (valid()) {
-    //   console.log('valid post submission')
-    // }
-    // if (title && details) {
-    //   fetch('http://localhost:8000/notes', {
-    //     method: 'POST',
-    //     headers: { "Content-type": "application/json" },
-    //     body: JSON.stringify({ title, details, category })
-    //   }).then(() => history.push('/'))
-    // }
+    if (values.category && values.title && values.uniqname && values.desc && values.contInfo) {
+      fetch('http://localhost:8000/posts', {
+        method: 'POST',
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          "category": values.category,
+          "title": values.title,
+          "uniqname": values.uniqname,
+          "desc": values.desc,
+          "contInfo": values.contInfo
+        })
+      }).then(() => history.push('/'))
+      console.log('Post created!')
+    }
   }
 
   return (
@@ -87,6 +100,7 @@ export default function Create() {
           label='Category'
           name='category'
           error={categoryError}
+          helperText='This field is required'
           options={categoryOpts}
           value={values.category}
           onChange={handleChange}
@@ -95,7 +109,7 @@ export default function Create() {
           label='Title'
           name='title'
           error={titleError}
-          helperT
+          helperText='Please give the post a title'
           value={values.title}
           onChange={handleChange}
         />
@@ -103,6 +117,8 @@ export default function Create() {
           label='Uniqname'
           name='uniqname'
           error={uniqnameError}
+          helperText='This field is required'
+
           value={values.uniqname}
           onChange={handleChange}
         />
@@ -110,6 +126,8 @@ export default function Create() {
           label='Contact Info'
           name='contInfo'
           error={contInfoError}
+          helperText='This field is required'
+
           value={values.contInfo}
           onChange={handleChange}
         />
@@ -117,6 +135,8 @@ export default function Create() {
           label='Description'
           name='desc'
           error={descError}
+          helperText='This field is required'
+
           value={values.desc}
           onChange={handleChange}
         />

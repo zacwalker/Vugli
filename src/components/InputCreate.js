@@ -4,7 +4,7 @@ import { Box } from '@mui/system';
 
 
 export default function InputCreate(props) {
-  const { label, name, value, options, error = null, onChange } = props;
+  const { label, name, helperText, value, options, error = null, onChange } = props;
 
   // if options are provided for a select input
   if (options) {
@@ -22,7 +22,7 @@ export default function InputCreate(props) {
           fullWidth
           value={value}
           onChange={onChange}
-          {...(error && { error: true })}
+          {...(error && { error: true, helperText: helperText })}
           label={label}
           variant="filled"
         >
@@ -48,7 +48,7 @@ export default function InputCreate(props) {
         fullWidth
         value={value}
         onChange={onChange}
-        {...(error && { error: true })}
+        {...(error && { error: true, helperText: helperText })}
         label={label}
         variant="filled"
       />
