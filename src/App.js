@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Posts from './pages/Posts'
 import Create from './pages/Create'
-import { deepOrange,  indigo, green } from '@mui/material/colors';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Layout from './components/Layout'
+import { deepOrange,  indigo } from '@mui/material/colors'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 
 const theme = createTheme({
@@ -23,14 +24,16 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Posts />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-        </Switch>
+        <Layout>
+          <Switch>
+            <Route exact path="/">
+              <Posts />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+          </Switch>
+        </Layout>
       </Router>
     </ThemeProvider>
   );

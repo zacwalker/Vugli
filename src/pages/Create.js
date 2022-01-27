@@ -32,13 +32,14 @@ const imageOpts = {
   "Homework": "/img/pexels-keira-burton-6147276.jpg",
 }
 
+// TODO make a services directory for serperate validate and insert functions
+// TODO improve form validation (limit input chars, length, and types)
+// TODO modal for discard
 export default function Create() {
   const { values, handleChange } = useForm(inputValues);
   const history = useHistory()
 
   // simple (but bad) validation
-  // TODO make a services directory for serperate validate and insert functions
-  // TODO improve form validation (limit input chars, length, and types)
   const [categoryError, setcategoryErr] = useState(false);
   const [titleError, settitleErr] = useState(false);
   const [uniqnameError, setuniqnameErr] = useState(false);

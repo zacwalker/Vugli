@@ -10,7 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
-// TODO handle image
+// TODO add delete (maybe hide as well), make functions for buttons, 
 export default function Post(post) {
   const data = post.post;
 
