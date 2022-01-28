@@ -22,6 +22,7 @@ export default function Post(post) {
             <MoreVertIcon />
           </IconButton>
         }
+        sx={{ backgroundColor: 'primary.main' }}
         title={data.category}
         subheader={data.uniqname}
       />

@@ -13,16 +13,17 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 const drawerWidth = 240;
 
 function Layout(props) {
-  const history = useHistory()
-  const location = useLocation()
+  const history = useHistory();
+  const location = useLocation();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const active = "#f4f4f4";
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -42,10 +43,9 @@ function Layout(props) {
   ];
 
   const drawer = (
-
     <div>
       {/* <Toolbar /> */}
-      <div id="drawer-header" backgroundColor="secondary">
+      <div id="drawer-header" backgroundcolor="secondary">
         <Typography variant="h5" padding={2} align='center' color="primary">
           VUgLi
         </Typography>
@@ -54,13 +54,15 @@ function Layout(props) {
       {/* links/list section */}
       <List>
         {menuItems.map((item) => (
+          
           <ListItem
             button
             key={item.text}
             onClick={() => history.push(item.path)}
+            sx={location.pathname === item.path ? {backgroundColor: active} : null}
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText primary={item.text} />
+             <ListItemText primary={item.text} />
           </ListItem>
         ))}
       </List>
@@ -74,6 +76,7 @@ function Layout(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
+      {/* appbar */}
       <AppBar
         position="fixed"
         color="secondary"
@@ -92,7 +95,7 @@ function Layout(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6"  align='center' component="div">
+          <Typography variant="h6"  align='center'>
             Virtual Undergrauate Library
           </Typography>
         </Toolbar>
@@ -118,7 +121,7 @@ function Layout(props) {
           {drawer}
         </Drawer>
         <Drawer
-          variant="permanent"
+          variant="persistent"
           sx={{
             display: { xs: 'none', sm: 'block' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
@@ -128,6 +131,7 @@ function Layout(props) {
           {drawer}
         </Drawer>
       </Box>
+      {/* main content */}
       <Box
         component="main"
         sx={{ flexGrow: 1, p: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
