@@ -5,8 +5,6 @@ import App from './App';
 import CssBaseline from '@mui/material/CssBaseline';
 
 
-
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -1,101 +1,142 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core'
-import Drawer from '@material-ui/core/Drawer'
-import Typography from '@material-ui/core/Typography'
-import { useHistory, useLocation } from 'react-router-dom'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons'
-import { useTheme } from '@mui/styles';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { useHistory, useLocation } from 'react-router-dom'
 
-const drawerWidth = 240
 
-const useStyles = makeStyles((theme) => {
-  return {
-    page: {
-      width: '100%',
-      padding: theme.spacing(3),
-    },
-    root: {
-      display: 'flex',
-    },
-    drawer: {
-      width: drawerWidth,
-    },
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    active: {
-      background: '#f4f4f4'
-    },
-    title: {
-      padding: theme.spacing(2),
-    },
-  }
-})
+const drawerWidth = 240;
 
-export default function Layout({ children }) {
-  const classes = useStyles()
+function Layout(props) {
   const history = useHistory()
   const location = useLocation()
-  // the useTheme() hook allows us to use the "primary" and other theme overrides
-  const theme = useTheme()
-  
-  // console.log(theme.palette.primary)
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
 
   const menuItems = [
-    { 
-      text: 'My Posts', 
-      icon: <SubjectOutlined  color="primary" />, 
-      path: '/' 
+    {
+      text: 'My Posts',
+      icon: <SubjectOutlined color="primary" />,
+      path: '/'
     },
-    { 
-      text: 'Create Post', 
-      icon: <AddCircleOutlineOutlined color="primary" />, 
-      path: '/create' 
+    {
+      text: 'Create Post',
+      icon: <AddCircleOutlineOutlined color="primary" />,
+      path: '/create'
     },
   ];
 
-  return (
-    <div className={classes.root}>
-      {/* app bar */}
+  const drawer = (
 
-      {/* side drawer */}
-      <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{ paper: classes.drawerPaper }}
-        anchor="left"
+    <div>
+      {/* <Toolbar /> */}
+      <div id="drawer-header" backgroundColor="secondary">
+        <Typography variant="h5" padding={2} align='center' color="primary">
+          VUgLi
+        </Typography>
+      </div>
+      <Divider />
+      {/* links/list section */}
+      <List>
+        {menuItems.map((item) => (
+          <ListItem
+            button
+            key={item.text}
+            onClick={() => history.push(item.path)}
+          >
+            <ListItemIcon>{item.icon}</ListItemIcon>
+            <ListItemText primary={item.text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      {/* second list of links here */}
+    </div>
+  );
+
+  const container = window !== undefined ? () => window().document.body : undefined;
+
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        color="secondary"
+        sx={{
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+        }}
       >
-        <div id="drawer-header">
-          <Typography variant="h5" className={classes.title} >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6"  align='center' component="div">
             Virtual Undergrauate Library
           </Typography>
-        </div>
-
-        {/* links/list section */}
-        <List>
-          {menuItems.map((item) => (
-            <ListItem 
-              button 
-              key={item.text} 
-              onClick={() => history.push(item.path)}
-              className={location.pathname === item.path ? classes.active : null}
-            >
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.text} />
-            </ListItem>
-          ))}
-        </List>
-        
-      </Drawer>
-
-      {/* main content */}
-      <div className={classes.page}>
-        { children }
-      </div>
-    </div>
-  )
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // for mobile performance
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: 'none', sm: 'block' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+          open
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+      >
+        <Toolbar />
+        {props.children}
+      </Box>
+    </Box>
+  );
 }
+
+export default Layout;
