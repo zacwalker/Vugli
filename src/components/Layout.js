@@ -77,6 +77,7 @@ function Layout(props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       {/* appbar */}
+      {/* <Navbar /> */}
       <AppBar
         position="fixed"
         color="secondary"
@@ -100,6 +101,7 @@ function Layout(props) {
           </Typography>
         </Toolbar>
       </AppBar>
+      {/* <Navbar /> */}
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -130,7 +132,7 @@ function Layout(props) {
         >
           {drawer}
         </Drawer>
-      </Box>
+      </Box> 
       {/* main content */}
       <Box
         component="main"
