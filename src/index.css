@@ -4,22 +4,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#drawer-header {
-  /* border-right: 1px solid #000; */
-  /* border-bottom: 1px solid grey; */
-}
-
 .drawer-item {
   border-bottom: 1px solid rgba(0, 0, 0, 0.055);
-
-}
-
-.MuiCardHeader-subheader {
-  color: red;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justifyContent: 'flex-end',
+  /* justifyContent: 'flex-end', */
 }
