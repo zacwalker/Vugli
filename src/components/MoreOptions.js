@@ -80,7 +80,6 @@ export default function MoreOptions(props) {
                 >
                   <MenuItem onClick={handleClose}>Save</MenuItem>
                   <MenuItem onClick={handleClose}>Hide</MenuItem>
-                  {/* <MenuItem onClick={() => props.setDel(true)}>Delete</MenuItem> */}
                   <MenuItem onClick={handleDeleteClose}>Delete</MenuItem>
                 </MenuList>
               </ClickAwayListener>

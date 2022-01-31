@@ -12,13 +12,6 @@ import MoreOptions from './MoreOptions';
 // TODO add delete (maybe hide as well), make functions for buttons, 
 export default function Post(props) {
   const data = props.post;
-  // const [save, setSave] = React.useState(false);
-  const [del, setDel] = React.useState(false);
-
-  if (del) {
-    console.log('state of delete changed at id: ' + data.id);
-    setDel(false);
-  }
 
   return (
     <Card sx={{ maxWidth: 345 }} color="secondary" raised>
@@ -27,7 +20,6 @@ export default function Post(props) {
             <MoreOptions 
               data={data.id}
               handleDeleteClick={() => props.handleDelete(data.id)} 
-              setDel={setDel}
             />
         }
         sx={{ backgroundColor: 'primary.main', color: 'white' }}
