@@ -16,7 +16,7 @@ import Typography from '@mui/material/Typography';
 import { useHistory, useLocation } from 'react-router-dom';
 
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 function Layout(props) {
   const history = useHistory();

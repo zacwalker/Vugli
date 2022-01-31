@@ -6,30 +6,29 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MoreOptions from './MoreOptions';
 
 
 // TODO add delete (maybe hide as well), make functions for buttons, 
-export default function Post(post) {
-  const data = post.post;
+export default function Post(props) {
+  const data = props.post;
+  // const [save, setSave] = React.useState(false);
+  const [del, setDel] = React.useState(false);
+
+  if (del) {
+    console.log('state of delete changed at id: ' + data.id);
+    setDel(false);
+  }
 
   return (
     <Card sx={{ maxWidth: 345 }} color="secondary" raised>
       <CardHeader
-        // action={
-        //   <IconButton aria-label="settings"
-        //     onClick={() => 
-        //       console.log('options clicked')
-        //     }
-        //   >
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
-        action = {
-        
-            <MoreOptions />
+        action = {        
+            <MoreOptions 
+              data={data.id}
+              handleDeleteClick={() => props.handleDelete(data.id)} 
+              setDel={setDel}
+            />
         }
         sx={{ backgroundColor: 'primary.main', color: 'white' }}
         title={data.category}

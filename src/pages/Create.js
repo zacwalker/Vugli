@@ -34,7 +34,6 @@ const imageOpts = {
 
 // TODO make a services directory for serperate validate and insert functions
 // TODO improve form validation (limit input chars, length, and types)
-// TODO modal for discard
 export default function Create() {
   const { values, handleChange } = useForm(inputValues);
   const history = useHistory()
