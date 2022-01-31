@@ -20,7 +20,9 @@ export default function Post(props) {
             <MoreOptions 
               data={data.id}
               handleDeleteClick={() => props.handleDelete(data.id)} 
-            />
+              handleHideClick={() => props.handleHide(data.id)} 
+              handleSaveClick={() => props.handleSave(data.id)} 
+              />
         }
         sx={{ backgroundColor: 'primary.main', color: 'white' }}
         title={data.category}

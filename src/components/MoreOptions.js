@@ -9,20 +9,12 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { IconButton } from '@mui/material';
 
 
-// this component is using one level of prop drilling for to handle delete, save
 export default function MoreOptions(props) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
-  };
-
-  const handleClose = (event) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
-    }
-    setOpen(false);
   };
 
   function handleListKeyDown(event) {
@@ -34,12 +26,30 @@ export default function MoreOptions(props) {
     }
   }
 
-  const handleDeleteClose = (event) => {
+  // TODO handle functions can be cleaned up (maybe seperate file, or componenets)
+  // Using event obejct to determine which function to fire
+  const handleClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
     setOpen(false);
-    props.handleDeleteClick();
+
+    const option = event.target.id;
+    console.log(option + ' was clicked')
+
+    switch (option) {
+      case 'hide':
+        props.handleHideClick();        
+        break;
+      case 'save':
+        console.log("save not yet implemented")
+        break;
+      case 'delete':
+        props.handleDeleteClick();
+        break;
+      default:
+        console.log('option not chosen')
+    }
   };
 
   return (
@@ -78,9 +88,9 @@ export default function MoreOptions(props) {
                   aria-labelledby="composition-button"
                   onKeyDown={handleListKeyDown}
                 >
-                  <MenuItem onClick={handleClose}>Save</MenuItem>
-                  <MenuItem onClick={handleClose}>Hide</MenuItem>
-                  <MenuItem onClick={handleDeleteClose}>Delete</MenuItem>
+                  <MenuItem id="save" onClick={handleClose}>Save</MenuItem>
+                  <MenuItem id="hide" onClick={handleClose}>Hide</MenuItem>
+                  <MenuItem id="delete" onClick={handleClose}>Delete</MenuItem>
                 </MenuList>
               </ClickAwayListener>
             </Paper>
