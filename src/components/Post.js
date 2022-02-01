@@ -16,13 +16,13 @@ export default function Post(props) {
   return (
     <Card sx={{ maxWidth: 345 }} color="secondary" raised>
       <CardHeader
-        action = {        
-            <MoreOptions 
-              data={data.id}
-              handleDeleteClick={() => props.handleDelete(data.id)} 
-              handleHideClick={() => props.handleHide(data.id)} 
-              handleSaveClick={() => props.handleSave(data.id)} 
-              />
+        action={
+          <MoreOptions
+            data={data.id}
+            handleDeleteClick={() => props.handleDelete(data.id)}
+            handleHideClick={() => props.handleHide(data.id)}
+            handleSaveClick={() => props.handleSave(data.id)}
+          />
         }
         sx={{ backgroundColor: 'primary.main', color: 'white' }}
         title={data.category}

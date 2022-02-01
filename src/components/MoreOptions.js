@@ -7,10 +7,11 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { IconButton } from '@mui/material';
-
+import AlertDeleteDialog from './AlertDeleteDialog';
 
 export default function MoreOptions(props) {
   const [open, setOpen] = React.useState(false);
+  const [openDialog, setOpenDialog] = React.useState(false);
   const anchorRef = React.useRef(null);
 
   const handleToggle = () => {
@@ -24,6 +25,14 @@ export default function MoreOptions(props) {
     } else if (event.key === 'Escape') {
       setOpen(false);
     }
+  }
+
+  // close dialog and call delete if confirmed
+  const handleConfirmDialog = (event) => {
+    if (event.target.id === "confirm-delete") {
+      props.handleDeleteClick();
+    }
+    setOpenDialog(false);
   }
 
   // TODO handle functions can be cleaned up (maybe seperate file, or componenets)
@@ -42,18 +51,19 @@ export default function MoreOptions(props) {
         props.handleHideClick();        
         break;
       case 'save':
-        console.log("save not yet implemented")
+        console.log("save not yet implemented");
         break;
       case 'delete':
-        props.handleDeleteClick();
+        setOpenDialog(true);
         break;
       default:
-        console.log('option not chosen')
+        console.log('option not chosen');
     }
   };
 
   return (
     <div>
+      <AlertDeleteDialog openDialog={openDialog} handleConfirmDialog={handleConfirmDialog} />
       <IconButton
         ref={anchorRef}
         id="composition-button"

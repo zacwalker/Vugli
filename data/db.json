@@ -64,13 +64,22 @@
       "desc": "Hey everyone, Conor here! I've been playing this game a lot lately and was hoping other people wanted to play or talk about it too!"
     },
     {
-      "category": "School",
-      "image": "/img/pexels-pixabay-207691.jpg",
-      "title": "eecs 493",
-      "uniqname": "zwall",
-      "desc": "Hey everyone, I was wondering if anyone wanted to chat about the user interface lectures this week",
-      "contInfo": "zwall@umich.edu",
-      "id": 9
+      "id": 8,
+      "uniqname": "kimjuyou",
+      "category": "Reading",
+      "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
+      "title": "Harry Potter",
+      "contInfo": "t.me/kimjuyou",
+      "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!"
+    },
+    {
+      "id": 9,
+      "uniqname": "kimjuyou",
+      "category": "Reading",
+      "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
+      "title": "Harry Potter",
+      "contInfo": "t.me/kimjuyou",
+      "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!"
     }
   ]
 }
