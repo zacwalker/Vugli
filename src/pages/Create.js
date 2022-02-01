@@ -36,7 +36,7 @@ const imageOpts = {
 // TODO improve form validation (limit input chars, length, and types)
 export default function Create() {
   const { values, handleChange } = useForm(inputValues);
-  const history = useHistory()
+  const history = useHistory();
 
   // simple (but bad) validation
   const [categoryError, setcategoryErr] = useState(false);
@@ -98,7 +98,7 @@ export default function Create() {
       {/* <Header /> */}
       <Typography
         variant="h3"
-        color="secondary"
+        color="primary"
         gutterBottom
       >
         Create Post

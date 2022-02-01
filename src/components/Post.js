@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import MoreOptions from './MoreOptions';
 
 
-// TODO add delete (maybe hide as well), make functions for buttons, 
 export default function Post(props) {
   const data = props.post;
 
@@ -24,10 +23,9 @@ export default function Post(props) {
             handleSaveClick={() => props.handleSave(data.id)}
           />
         }
-        sx={{ backgroundColor: 'primary.main', color: 'white' }}
+        sx={{ backgroundColor: '#10304e', color: '#FFCB05' }}
         title={data.category}
-        subheader={data.uniqname}
-        color='white'
+        subheader={<span style={{color: "white"}}>{data.uniqname}</span>}
       />
       <CardMedia
         component="img"
@@ -35,7 +33,7 @@ export default function Post(props) {
         // image="/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg"
         image={data.image}
       />
-      <CardContent>
+      <CardContent sx={{backgroundColor: "E2E2E2"}}>
         <Typography gutterBottom variant="h5" component="div" color="primary">
           {data.title}
         </Typography>
@@ -44,8 +42,8 @@ export default function Post(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
+        {/* <Button size="small">Learn More</Button> */}
       </CardActions>
     </Card>
   );

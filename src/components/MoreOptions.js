@@ -35,16 +35,13 @@ export default function MoreOptions(props) {
     setOpenDialog(false);
   }
 
-  // TODO handle functions can be cleaned up (maybe seperate file, or componenets)
   // Using event obejct to determine which function to fire
   const handleClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
     setOpen(false);
-
     const option = event.target.id;
-    console.log(option + ' was clicked')
 
     switch (option) {
       case 'hide':
@@ -66,6 +63,7 @@ export default function MoreOptions(props) {
       <AlertDeleteDialog openDialog={openDialog} handleConfirmDialog={handleConfirmDialog} />
       <IconButton
         ref={anchorRef}
+        sx={{color: "#FFCB05"}}
         id="composition-button"
         aria-controls={open ? 'composition-menu' : undefined}
         aria-expanded={open ? 'true' : undefined}

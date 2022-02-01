@@ -34,7 +34,7 @@
       "image": "/img/spencer-imbrock-JAHdPHMoaEA-unsplash.jpg",
       "title": "Jingle Bell",
       "contInfo": "zwall@umich.edu",
-      "desc": "Hey everyone, Zac here! I've been really into christmas music lately lately and was hoping other people wanted to play or talk about it too!"
+      "desc": "Hey everyone, Zac here! I've been really into christmas music lately lately and was hoping other people wanted to play or talk about it too! Hey everyone, Zac here! I've been really into christmas music lately lately and was hoping other people wanted to play or talk about it too!"
     },
     {
       "id": 5,
@@ -80,6 +80,15 @@
       "title": "Harry Potter",
       "contInfo": "t.me/kimjuyou",
       "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!"
+    },
+    {
+      "category": "Homework",
+      "image": "/img/pexels-keira-burton-6147276.jpg",
+      "title": "too much of it",
+      "uniqname": "zwall",
+      "desc": "there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. ",
+      "contInfo": "my email",
+      "id": 10
     }
   ]
 }

@@ -32,9 +32,9 @@ export default function Posts() {
 
   return (
     <Container>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 6, md: 12 }}>
+      <Grid container spacing={{ xs: 2, md: 2 }} >
         {posts.map(post => (
-          <Grid item xs={2} sm={3} md={4} key={post.id}>
+          <Grid item sm={12} md={6} lg={3} key={post.id}>
             <Post
               post={post}
               handleDelete={handleDelete}

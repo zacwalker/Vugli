@@ -29,7 +29,7 @@ export default function CreateButton() {
         Discard
       </Button>
       <Button
-        color="secondary"
+        color="primary"
         type="submit"
         variant="contained"
         endIcon={<AddIcon />}

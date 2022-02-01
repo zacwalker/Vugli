@@ -9,10 +9,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 const theme = createTheme({
   palette: {
     primary: {
-      main: deepOrange[500]
+      main: "#10304E"
     },
     secondary: {
-      main: indigo[500],
+      main: "#FFCB05",
     },
     light: {
       // color: indigo[300]

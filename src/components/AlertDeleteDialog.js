@@ -7,20 +7,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
 export default function AlertDeleteDialog(props) {
-//   const [open, setOpen] = React.useState(false);
-
-//   const handleClickOpen = () => {
-//     setOpen(true);
-//   };
-
-//   const handleClose = (event) => {
-//     if(event.target.id === "confirm-delete") {
-//         console.log(event.target.id);
-//     }
-//     props.
-//     setOpen(false);
-//   };
-
   return (
     <div>
       <Dialog
