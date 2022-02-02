@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Posts from './pages/Posts'
 import Create from './pages/Create'
+import Saved from './pages/Saved'
 import Layout from './components/Layout'
 import { deepOrange,  indigo } from '@mui/material/colors'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path="/create">
               <Create />
+            </Route>
+            <Route path="/saved">
+              <Saved />
             </Route>
           </Switch>
         </Layout>

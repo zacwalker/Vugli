@@ -7,7 +7,8 @@
       "image": "/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg",
       "title": "Jurassic Park",
       "contInfo": "dcskeen@umich.edu",
-      "desc": "Hey everyone, Daniel here! I really enjoyed this movie and was wondering if other people wanted watch or talk about"
+      "desc": "Hey everyone, Daniel here! I really enjoyed this movie and was wondering if other people wanted watch or talk about",
+      "saved": false
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "image": "/img/pexels-keira-burton-6147276.jpg",
       "title": "EECS 441",
       "contInfo": "+1 (123) 456-7890",
-      "desc": "Hey everyone, Lil Boat here! I've been working on this project and was looking for people who may want to help test it out!"
+      "desc": "Hey everyone, Lil Boat here! I've been working on this project and was looking for people who may want to help test it out!",
+      "saved": false
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
       "title": "Harry Potter",
       "contInfo": "t.me/kimjuyou",
-      "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!"
+      "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!",
+      "saved": false
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "image": "/img/spencer-imbrock-JAHdPHMoaEA-unsplash.jpg",
       "title": "Jingle Bell",
       "contInfo": "zwall@umich.edu",
-      "desc": "Hey everyone, Zac here! I've been really into christmas music lately lately and was hoping other people wanted to play or talk about it too! Hey everyone, Zac here! I've been really into christmas music lately lately and was hoping other people wanted to play or talk about it too!"
+      "desc": "Hey everyone, Zac here! I've been really into christmas music lately lately and was hoping other people wanted to play or talk about it too! Hey everyone, Zac here! I've been really into christmas music lately lately and was hoping other people wanted to play or talk about it too!",
+      "saved": false
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "image": "/img/spencer-imbrock-JAHdPHMoaEA-unsplash.jpg",
       "title": "Jingle Bell Rock",
       "contInfo": "zwall@umich.edu",
-      "desc": "Hey everyone, Zac here! I just discovered this other christmas song and was hoping other people wanted to play or talk about it too!"
+      "desc": "Hey everyone, Zac here! I just discovered this other christmas song and was hoping other people wanted to play or talk about it too!",
+      "saved": false
     },
     {
       "id": 6,
@@ -52,7 +57,8 @@
       "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
       "title": "Hunger Games",
       "contInfo": "t.me/kimjuyou",
-      "desc": "Hey everyone, Ju Young here! I've been reading this series a lot lately and was hoping other people wanted to read and talk about it too!"
+      "desc": "Hey everyone, Ju Young here! I've been reading this series a lot lately and was hoping other people wanted to read and talk about it too!",
+      "saved": false
     },
     {
       "id": 7,
@@ -61,7 +67,8 @@
       "image": "/img/pexels-keira-burton-6147276.jpg",
       "title": "Hula",
       "contInfo": "gaffney@umich.edu",
-      "desc": "Hey everyone, Conor here! I've been playing this game a lot lately and was hoping other people wanted to play or talk about it too!"
+      "desc": "Hey everyone, Conor here! I've been playing this game a lot lately and was hoping other people wanted to play or talk about it too!",
+      "saved": false
     },
     {
       "id": 8,
@@ -70,7 +77,8 @@
       "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
       "title": "Harry Potter",
       "contInfo": "t.me/kimjuyou",
-      "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!"
+      "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!",
+      "saved": false
     },
     {
       "id": 9,
@@ -79,16 +87,18 @@
       "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
       "title": "Harry Potter",
       "contInfo": "t.me/kimjuyou",
-      "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!"
+      "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!",
+      "saved": true
     },
     {
+      "id": 10,
       "category": "Homework",
       "image": "/img/pexels-keira-burton-6147276.jpg",
       "title": "too much of it",
       "uniqname": "zwall",
-      "desc": "there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. ",
       "contInfo": "my email",
-      "id": 10
+      "desc": "there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. ",
+      "saved": true
     }
   ]
 }
