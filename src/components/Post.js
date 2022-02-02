@@ -11,6 +11,7 @@ import MoreOptions from './MoreOptions';
 
 export default function Post(props) {
   const data = props.post;
+  // if (props.saved === true && props.)
   return (
     <Card sx={{ maxWidth: 345 }} color="secondary" raised>
       <CardHeader
