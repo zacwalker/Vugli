@@ -8,10 +8,13 @@ import MenuList from '@mui/material/MenuList';
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { IconButton } from '@mui/material';
 import AlertDeleteDialog from './AlertDeleteDialog';
+import { useLocation } from 'react-router-dom'
+
 
 export default function MoreOptions(props) {
   const [open, setOpen] = React.useState(false);
   const [openDialog, setOpenDialog] = React.useState(false);
+  const location = useLocation();
   const anchorRef = React.useRef(null);
 
   const handleToggle = () => {
@@ -45,7 +48,7 @@ export default function MoreOptions(props) {
 
     switch (option) {
       case 'hide':
-        props.handleHideClick();        
+        props.handleHideClick();
         break;
       case 'save':
         props.handleSaveClick();
@@ -63,7 +66,7 @@ export default function MoreOptions(props) {
       <AlertDeleteDialog openDialog={openDialog} handleConfirmDialog={handleConfirmDialog} />
       <IconButton
         ref={anchorRef}
-        sx={{color: "#FFCB05"}}
+        sx={{ color: "#FFCB05" }}
         id="composition-button"
         aria-controls={open ? 'composition-menu' : undefined}
         aria-expanded={open ? 'true' : undefined}
@@ -90,16 +93,27 @@ export default function MoreOptions(props) {
           >
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
-                <MenuList
-                  autoFocusItem={open}
-                  id="composition-menu"
-                  aria-labelledby="composition-button"
-                  onKeyDown={handleListKeyDown}
-                >
-                  <MenuItem id="save" onClick={handleClose}>Save</MenuItem>
-                  <MenuItem id="hide" onClick={handleClose}>Hide</MenuItem>
-                  <MenuItem id="delete" onClick={handleClose}>Delete</MenuItem>
-                </MenuList>
+                {location.pathname === "/saved" ? (
+                  <MenuList
+                    autoFocusItem={open}
+                    id="composition-menu"
+                    aria-labelledby="composition-button"
+                    onKeyDown={handleListKeyDown}
+                  >
+                    <MenuItem id="unsave" onClick={handleClose}>Unsave</MenuItem>
+                  </MenuList>
+                ) : (
+                  <MenuList
+                    autoFocusItem={open}
+                    id="composition-menu"
+                    aria-labelledby="composition-button"
+                    onKeyDown={handleListKeyDown}
+                  >
+                    <MenuItem id="save" onClick={handleClose}>Save</MenuItem>
+                    <MenuItem id="hide" onClick={handleClose}>Hide</MenuItem>
+                    <MenuItem id="delete" onClick={handleClose}>Delete</MenuItem>
+                  </MenuList>
+                )}
               </ClickAwayListener>
             </Paper>
           </Grow>
