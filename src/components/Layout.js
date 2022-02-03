@@ -13,6 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import { useHistory, useLocation } from 'react-router-dom';
 
 
@@ -23,7 +24,7 @@ function Layout(props) {
   const location = useLocation();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const active = "#f4f4f4";
+  const acitveColor = "#f4f4f4";
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -40,6 +41,11 @@ function Layout(props) {
       icon: <AddCircleOutlineOutlined color="primary" />,
       path: '/create'
     },
+    {
+      text: 'Saved Posts',
+      icon: <BookmarkBorderIcon color="primary" />,
+      path: '/saved'
+    },
   ];
 
   const drawer = (
@@ -54,12 +60,11 @@ function Layout(props) {
       {/* links/list section */}
       <List>
         {menuItems.map((item) => (
-          
           <ListItem
             button
             key={item.text}
             onClick={() => history.push(item.path)}
-            sx={location.pathname === item.path ? {backgroundColor: active} : null}
+            sx={location.pathname === item.path ? {backgroundColor: acitveColor} : null}
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
              <ListItemText primary={item.text} />
