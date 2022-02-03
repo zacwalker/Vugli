@@ -1,16 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "uniqname": "dcskeen",
-      "category": "Movie",
-      "image": "/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg",
-      "title": "Jurassic Park",
-      "contInfo": "dcskeen@umich.edu",
-      "desc": "Hey everyone, Daniel here! I really enjoyed this movie and was wondering if other people wanted watch or talk about",
-      "saved": false
-    },
-    {
       "id": 2,
       "uniqname": "kgaba",
       "category": "Homework",
@@ -51,14 +41,8 @@
       "saved": false
     },
     {
-      "id": 6,
-      "uniqname": "kimjuyou",
-      "category": "Reading",
-      "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
-      "title": "Hunger Games",
-      "contInfo": "t.me/kimjuyou",
-      "desc": "Hey everyone, Ju Young here! I've been reading this series a lot lately and was hoping other people wanted to read and talk about it too!",
-      "saved": false
+      "saved": true,
+      "id": 6
     },
     {
       "id": 7,
@@ -98,6 +82,35 @@
       "uniqname": "zwall",
       "contInfo": "my email",
       "desc": "there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. ",
+      "saved": true
+    },
+    {
+      "category": "Music",
+      "image": "/img/spencer-imbrock-JAHdPHMoaEA-unsplash.jpg",
+      "title": "test",
+      "uniqname": "test",
+      "desc": "test",
+      "contInfo": "test",
+      "id": 11
+    },
+    {
+      "category": "Movies",
+      "image": "/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg",
+      "title": "test",
+      "uniqname": "test",
+      "desc": "test",
+      "contInfo": "test",
+      "id": 12,
+      "saved": true
+    },
+    {
+      "category": "Homework",
+      "image": "/img/pexels-keira-burton-6147276.jpg",
+      "title": "test",
+      "uniqname": "test",
+      "desc": "test",
+      "contInfo": "test",
+      "id": 13,
       "saved": true
     }
   ]

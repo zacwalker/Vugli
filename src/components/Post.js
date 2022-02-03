@@ -11,7 +11,7 @@ import MoreOptions from './MoreOptions';
 
 export default function Post(props) {
   const data = props.post;
-  // if (props.saved === true && props.)
+  
   return (
     <Card sx={{ maxWidth: 345 }} color="secondary" raised>
       <CardHeader
@@ -20,7 +20,7 @@ export default function Post(props) {
             data={data.id}
             handleDeleteClick={() => props.handleDelete(data.id)}
             handleHideClick={() => props.handleHide(data.id)}
-            handleSaveClick={() => props.handleSave(data.id)}
+            handleSaveClick={() => props.handleSave(data)}
           />
         }
         sx={{ backgroundColor: '#10304e', color: '#FFCB05' }}

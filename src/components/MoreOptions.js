@@ -48,7 +48,7 @@ export default function MoreOptions(props) {
         props.handleHideClick();        
         break;
       case 'save':
-        console.log("save not yet implemented");
+        props.handleSaveClick();
         break;
       case 'delete':
         setOpenDialog(true);

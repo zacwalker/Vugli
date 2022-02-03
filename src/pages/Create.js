@@ -83,7 +83,7 @@ export default function Create() {
           "contInfo": values.contInfo
         })
       }).then(() => history.push('/'))
-      console.log('Post created!')
+      console.log('Post Created!')
     }
   }
 
