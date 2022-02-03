@@ -45,7 +45,6 @@ export default function MoreOptions(props) {
     }
     setOpen(false);
     const option = event.target.id;
-
     switch (option) {
       case 'hide':
         props.handleHideClick();
@@ -55,6 +54,9 @@ export default function MoreOptions(props) {
         break;
       case 'delete':
         setOpenDialog(true);
+        break;
+      case 'unsave':
+        props.handleUnsaveClick();
         break;
       default:
         console.log('option not chosen');
@@ -93,6 +95,7 @@ export default function MoreOptions(props) {
           >
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
+                {/* change menu options depending on the page */}
                 {location.pathname === "/saved" ? (
                   <MenuList
                     autoFocusItem={open}

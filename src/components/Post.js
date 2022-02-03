@@ -20,7 +20,8 @@ export default function Post(props) {
             data={data.id}
             handleDeleteClick={() => props.handleDelete(data.id)}
             handleHideClick={() => props.handleHide(data.id)}
-            handleSaveClick={() => props.handleSave(data)}
+            handleSaveClick={() => props.handleSave(data.id)}
+            handleUnsaveClick={() => props.handleUnsave(data.id)}
           />
         }
         sx={{ backgroundColor: '#10304e', color: '#FFCB05' }}

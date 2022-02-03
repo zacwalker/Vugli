@@ -17,12 +17,23 @@ export default function Saved() {
       // .then(data => setPosts(data))
       .then(data => setPosts(savedFilter(data)))
   }, [])
-  
+
   const filterSavedData = (post) => {
     if (post.saved === true) {
       return true;
     }
     return false;
+  }
+
+  const handleUnsave = async (id) => {
+    const requestOptions = {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ saved: false })
+    }
+    await fetch('http://localhost:8000/posts/' + id, requestOptions)
+      .then(response => response.json())
+    console.log("handle save for id: " + id)
   }
 
   return (
@@ -32,6 +43,7 @@ export default function Saved() {
           <Grid item sm={12} md={6} lg={3} key={post.id}>
             <Post
               post={post}
+              handleUnsave={handleUnsave}
             />
           </Grid>
         ))}
