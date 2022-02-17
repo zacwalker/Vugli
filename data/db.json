@@ -71,26 +71,6 @@
       "saved": false
     },
     {
-      "id": 10,
-      "category": "Homework",
-      "image": "/img/pexels-keira-burton-6147276.jpg",
-      "title": "too much of it",
-      "uniqname": "zwall",
-      "contInfo": "my email",
-      "desc": "there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. there seems to be alot of homework laterly. ",
-      "saved": false
-    },
-    {
-      "category": "Music",
-      "image": "/img/spencer-imbrock-JAHdPHMoaEA-unsplash.jpg",
-      "title": "test",
-      "uniqname": "test",
-      "desc": "test",
-      "contInfo": "test",
-      "id": 11,
-      "saved": true
-    },
-    {
       "category": "Reading",
       "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
       "title": "Dictionary",
@@ -98,6 +78,15 @@
       "desc": "I think the pacing was a bit off, its was a rollercoaster seeing some of these words together and really hurt the experience",
       "contInfo": "smart guy @ cool email",
       "id": 14
+    },
+    {
+      "category": "Movies",
+      "image": "/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg",
+      "title": "shreck",
+      "uniqname": "name",
+      "desc": "contact me at name@email if you want to talk about shreck",
+      "contInfo": "name@email",
+      "id": 15
     }
   ]
 }

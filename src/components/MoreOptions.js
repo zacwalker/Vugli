@@ -149,7 +149,7 @@ export default function MoreOptions(props) {
         message="Post Unsaved"
         key={transition ? transition.name : ''}
       />
-      <Snackbar
+      {/* <Snackbar
         open={openDeleteSnackbar}
         onClose={handleSnackbarClose}
         TransitionComponent={transition}
@@ -168,8 +168,8 @@ export default function MoreOptions(props) {
         onClose={handleSnackbarClose}
         TransitionComponent={transition}
         message="Post Saved"
-        key={transition ? transition.name : ''}
-      />
+        key={transition ? transition.name : ''} */}
+      {/* /> */}
     </div>
   );
 }
