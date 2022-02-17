@@ -16,7 +16,9 @@ import Slide from '@mui/material/Slide';
 export default function MoreOptions(props) {
   const [open, setOpen] = React.useState(false);
   const [openDialog, setOpenDialog] = React.useState(false);
-  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const [openSaveSnackbar, setOpenSaveSnackbar] = React.useState(false);
+  const [openDeleteSnackbar, setOpenDeleteSnackbar] = React.useState(false);
+  const [openHideSnackbar, setOpenHideSnackbar] = React.useState(false);
   const [transition, setTransition] = React.useState(undefined);
 
   const location = useLocation();
@@ -31,7 +33,7 @@ export default function MoreOptions(props) {
   };
 
   const handleSnackbarClose = () => {
-    setOpenSnackbar(false);
+    setOpenSaveSnackbar(false);
   }
 
   function handleListKeyDown(event) {
@@ -47,7 +49,7 @@ export default function MoreOptions(props) {
   const handleConfirmDialog = (event) => {
     if (event.target.id === "confirm-delete") {
       props.handleDeleteClick();
-      setOpenSnackbar(true);
+      setOpenDeleteSnackbar(true);
     }
     setOpenDialog(false);
   }
@@ -62,9 +64,11 @@ export default function MoreOptions(props) {
     switch (option) {
       case 'hide':
         props.handleHideClick();
+        setOpenHideSnackbar(true);
         break;
       case 'save':
         props.handleSaveClick();
+        setOpenSaveSnackbar(true);
         break;
       case 'delete':
         setOpenDialog(true);
@@ -72,8 +76,7 @@ export default function MoreOptions(props) {
       case 'unsave':
         props.handleUnsaveClick();
         setTransition(() => TransitionRight);
-        setOpenSnackbar(true)
-
+        setOpenSaveSnackbar(true)
         break;
       default:
         console.log('option not chosen');
@@ -140,10 +143,31 @@ export default function MoreOptions(props) {
         )}
       </Popper>
       <Snackbar
-        open={openSnackbar}
+        open={openSaveSnackbar}
         onClose={handleSnackbarClose}
         TransitionComponent={transition}
-        message="Post unsaved"
+        message="Post Unsaved"
+        key={transition ? transition.name : ''}
+      />
+      <Snackbar
+        open={openDeleteSnackbar}
+        onClose={handleSnackbarClose}
+        TransitionComponent={transition}
+        message="Post Succesfully Deleted"
+        key={transition ? transition.name : ''}
+      />
+      <Snackbar
+        open={openHideSnackbar}
+        onClose={handleSnackbarClose}
+        TransitionComponent={transition}
+        message="Post Hidden"
+        key={transition ? transition.name : ''}
+      />
+      <Snackbar
+        open={openSaveSnackbar}
+        onClose={handleSnackbarClose}
+        TransitionComponent={transition}
+        message="Post Saved"
         key={transition ? transition.name : ''}
       />
     </div>

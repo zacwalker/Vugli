@@ -47,6 +47,7 @@ export default function MoreOptionsList(props) {
   return <div>
     <Paper>
       <ClickAwayListener onClickAway={handleClose}>
+        {/* change options depending on page */}
         {location.pathname === "/saved" ? (
           <MenuList
             autoFocusItem={open}

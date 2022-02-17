@@ -87,26 +87,7 @@
       "uniqname": "test",
       "desc": "test",
       "contInfo": "test",
-      "id": 11
-    },
-    {
-      "category": "Movies",
-      "image": "/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg",
-      "title": "test",
-      "uniqname": "test",
-      "desc": "test",
-      "contInfo": "test",
-      "id": 12,
-      "saved": false
-    },
-    {
-      "category": "Homework",
-      "image": "/img/pexels-keira-burton-6147276.jpg",
-      "title": "test",
-      "uniqname": "test",
-      "desc": "test",
-      "contInfo": "test",
-      "id": 13,
+      "id": 11,
       "saved": true
     },
     {
