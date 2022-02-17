@@ -6,24 +6,27 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MoreOptions from './MoreOptions';
 
 
-// TODO add delete (maybe hide as well), make functions for buttons, 
-export default function Post(post) {
-  const data = post.post;
-
+export default function Post(props) {
+  const data = props.post;
+  
   return (
     <Card sx={{ maxWidth: 345 }} color="secondary" raised>
       <CardHeader
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          <MoreOptions
+            data={data.id}
+            handleDeleteClick={() => props.handleDelete(data.id)}
+            handleHideClick={() => props.handleHide(data.id)}
+            handleSaveClick={() => props.handleSave(data.id)}
+            handleUnsaveClick={() => props.handleUnsave(data.id)}
+          />
         }
+        sx={{ backgroundColor: '#10304e', color: '#FFCB05' }}
         title={data.category}
-        subheader={data.uniqname}
+        subheader={<span style={{color: "white"}}>{data.uniqname}</span>}
       />
       <CardMedia
         component="img"
@@ -31,7 +34,7 @@ export default function Post(post) {
         // image="/img/krists-luhaers-AtPWnYNDJnM-unsplash.jpg"
         image={data.image}
       />
-      <CardContent>
+      <CardContent sx={{backgroundColor: "E2E2E2"}}>
         <Typography gutterBottom variant="h5" component="div" color="primary">
           {data.title}
         </Typography>
@@ -40,8 +43,8 @@ export default function Post(post) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
+        {/* <Button size="small">Learn More</Button> */}
       </CardActions>
     </Card>
   );

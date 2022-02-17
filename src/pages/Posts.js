@@ -13,12 +13,41 @@ export default function Posts() {
       .then(data => setPosts(data))
   }, [])
 
+  const handleDelete = async (id) => {
+    await fetch('http://localhost:8000/posts/' + id, {
+      method: 'DELETE'
+    })
+    const newPosts = posts.filter(post => post.id !== id)
+    setPosts(newPosts)
+  }
+
+  const handleHide = (id) => {
+    const newPosts = posts.filter(post => post.id !== id)
+    setPosts(newPosts)
+  }
+
+  const handleSave = async (id) => {
+    const requestOptions = {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ saved: true })
+    };
+    await fetch('http://localhost:8000/posts/' + id, requestOptions)
+      .then(response => response.json())
+    console.log("handle save for id: " + id)
+  }
+
   return (
     <Container>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 6, md: 12 }}>
+      <Grid container spacing={{ xs: 2, md: 2 }} >
         {posts.map(post => (
-          <Grid item xs={2} sm={3} md={4} key={post.id}>
-            <Post post={post} />
+          <Grid item sm={12} md={6} lg={3} key={post.id}>
+            <Post
+              post={post}
+              handleDelete={handleDelete}
+              handleHide={handleHide}
+              handleSave={handleSave}
+            />
           </Grid>
         ))}
       </Grid>

@@ -1,30 +1,27 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import { useHistory, useLocation } from 'react-router-dom';
+// import Header from './Header';
+import { AppBar, Toolbar, IconButton } from '@material-ui/core'
+import MenuIcon from '@mui/icons-material/Menu';
 
 
-const drawerWidth = 200;
+const drawerWidth = 240;
 
-function Layout(props) {
+function Navbar(props) {
   const history = useHistory();
   const location = useLocation();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const acitveColor = "#f4f4f4";
+  const active = "#f4f4f4";
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -41,11 +38,6 @@ function Layout(props) {
       icon: <AddCircleOutlineOutlined color="primary" />,
       path: '/create'
     },
-    {
-      text: 'Saved Posts',
-      icon: <BookmarkBorderIcon color="primary" />,
-      path: '/saved'
-    },
   ];
 
   const drawer = (
@@ -60,14 +52,15 @@ function Layout(props) {
       {/* links/list section */}
       <List>
         {menuItems.map((item) => (
+
           <ListItem
             button
             key={item.text}
             onClick={() => history.push(item.path)}
-            sx={location.pathname === item.path ? {backgroundColor: acitveColor} : null}
+            sx={location.pathname === item.path ? { backgroundColor: active } : null}
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
-             <ListItemText primary={item.text} />
+            <ListItemText primary={item.text} />
           </ListItem>
         ))}
       </List>
@@ -79,11 +72,12 @@ function Layout(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      {/* appbar */}
-      {/* <Navbar /> */}
-      <AppBar
+    <Box
+      component="nav"
+      sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+      aria-label="mailbox folders"
+    >
+      {/* <AppBar
         position="fixed"
         color="secondary"
         sx={{
@@ -101,53 +95,40 @@ function Layout(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6"  align='center' component="div">
+          <Typography variant="h6" align='center'>
             Virtual Undergrauate Library
           </Typography>
         </Toolbar>
-      </AppBar>
-      {/* <Navbar /> */}
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
+      </AppBar> */}
+
+      <Drawer
+        container={container}
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // for mobile performance
+        }}
+        sx={{
+          display: { xs: 'block', sm: 'none' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+        }}
       >
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // for mobile performance
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="persistent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
-      </Box> 
-      {/* main content */}
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, p: 1, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        {drawer}
+      </Drawer>
+      <Drawer
+        variant="persistent"
+        sx={{
+          display: { xs: 'none', sm: 'block' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+        }}
+        open
       >
-        <Toolbar />
-        {props.children}
-      </Box>
+        {drawer}
+      </Drawer>
+
     </Box>
   );
 }
 
-export default Layout;
+export default Navbar;

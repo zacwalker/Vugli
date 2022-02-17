@@ -34,10 +34,9 @@ const imageOpts = {
 
 // TODO make a services directory for serperate validate and insert functions
 // TODO improve form validation (limit input chars, length, and types)
-// TODO modal for discard
 export default function Create() {
   const { values, handleChange } = useForm(inputValues);
-  const history = useHistory()
+  const history = useHistory();
 
   // simple (but bad) validation
   const [categoryError, setcategoryErr] = useState(false);
@@ -84,7 +83,7 @@ export default function Create() {
           "contInfo": values.contInfo
         })
       }).then(() => history.push('/'))
-      console.log('Post created!')
+      console.log('Post Created!')
     }
   }
 
@@ -99,7 +98,7 @@ export default function Create() {
       {/* <Header /> */}
       <Typography
         variant="h3"
-        color="secondary"
+        color="primary"
         gutterBottom
       >
         Create Post
