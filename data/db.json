@@ -68,7 +68,7 @@
       "title": "Harry Potter",
       "contInfo": "t.me/kimjuyou",
       "desc": "Hey everyone, Ju Young here! I've been enjoying these books a lot lately and was hoping other people wanted discuss them too!",
-      "saved": true
+      "saved": false
     },
     {
       "id": 10,
@@ -97,7 +97,7 @@
       "desc": "test",
       "contInfo": "test",
       "id": 12,
-      "saved": true
+      "saved": false
     },
     {
       "category": "Homework",
@@ -108,6 +108,15 @@
       "contInfo": "test",
       "id": 13,
       "saved": true
+    },
+    {
+      "category": "Reading",
+      "image": "/img/inaki-del-olmo-NIJuEQw0RKg-unsplash.jpg",
+      "title": "Dictionary",
+      "uniqname": "zwall",
+      "desc": "I think the pacing was a bit off, its was a rollercoaster seeing some of these words together and really hurt the experience",
+      "contInfo": "smart guy @ cool email",
+      "id": 14
     }
   ]
 }

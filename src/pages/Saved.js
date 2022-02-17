@@ -14,7 +14,6 @@ export default function Saved() {
     // instead of fetching again, could use redux or firebase
     fetch('http://localhost:8000/posts')
       .then(res => res.json())
-      // .then(data => setPosts(data))
       .then(data => setPosts(savedFilter(data)))
   }, [])
 
@@ -32,8 +31,6 @@ export default function Saved() {
       body: JSON.stringify({ saved: false })
     }
     await fetch('http://localhost:8000/posts/' + id, requestOptions)
-      .then(response => response.json())
-    console.log("handle save for id: " + id)
   }
 
   return (

@@ -9,17 +9,30 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { IconButton } from '@mui/material';
 import AlertDeleteDialog from './AlertDeleteDialog';
 import { useLocation } from 'react-router-dom'
+import Snackbar from '@mui/material/Snackbar';
+import Slide from '@mui/material/Slide';
 
 
 export default function MoreOptions(props) {
   const [open, setOpen] = React.useState(false);
   const [openDialog, setOpenDialog] = React.useState(false);
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const [transition, setTransition] = React.useState(undefined);
+
   const location = useLocation();
   const anchorRef = React.useRef(null);
+
+  function TransitionRight(props) {
+    return <Slide {...props} direction="right" />;
+  }
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
+
+  const handleSnackbarClose = () => {
+    setOpenSnackbar(false);
+  }
 
   function handleListKeyDown(event) {
     if (event.key === 'Tab') {
@@ -34,6 +47,7 @@ export default function MoreOptions(props) {
   const handleConfirmDialog = (event) => {
     if (event.target.id === "confirm-delete") {
       props.handleDeleteClick();
+      setOpenSnackbar(true);
     }
     setOpenDialog(false);
   }
@@ -57,6 +71,9 @@ export default function MoreOptions(props) {
         break;
       case 'unsave':
         props.handleUnsaveClick();
+        setTransition(() => TransitionRight);
+        setOpenSnackbar(true)
+
         break;
       default:
         console.log('option not chosen');
@@ -122,6 +139,13 @@ export default function MoreOptions(props) {
           </Grow>
         )}
       </Popper>
+      <Snackbar
+        open={openSnackbar}
+        onClose={handleSnackbarClose}
+        TransitionComponent={transition}
+        message="Post unsaved"
+        key={transition ? transition.name : ''}
+      />
     </div>
   );
 }
